@@ -32,13 +32,13 @@ namespace Terminarz_siłownia
             this.groupBoxOsoba = new System.Windows.Forms.GroupBox();
             this.comboBoxOsoby = new System.Windows.Forms.ComboBox();
             this.groupBoxDodanieCwiczenia = new System.Windows.Forms.GroupBox();
+            this.labelDataCwiczenia = new System.Windows.Forms.Label();
+            this.dateTimePickerDataCwiczenia = new System.Windows.Forms.DateTimePicker();
+            this.labelIloscPowtorzen = new System.Windows.Forms.Label();
+            this.numericUpDownIloscPowtorzen = new System.Windows.Forms.NumericUpDown();
+            this.buttonDodajCwiczenie = new System.Windows.Forms.Button();
             this.labelKategoria = new System.Windows.Forms.Label();
             this.comboBoxKategoria = new System.Windows.Forms.ComboBox();
-            this.buttonDodajCwiczenie = new System.Windows.Forms.Button();
-            this.numericUpDownIloscPowtorzen = new System.Windows.Forms.NumericUpDown();
-            this.labelIloscPowtorzen = new System.Windows.Forms.Label();
-            this.dateTimePickerDataCwiczenia = new System.Windows.Forms.DateTimePicker();
-            this.labelDataCwiczenia = new System.Windows.Forms.Label();
             this.groupBoxListaCwiczen = new System.Windows.Forms.GroupBox();
             this.dataGridViewListaCwiczen = new System.Windows.Forms.DataGridView();
             this.Kategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,7 @@ namespace Terminarz_siłownia
             // 
             // comboBoxOsoby
             // 
+            this.comboBoxOsoby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOsoby.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxOsoby.FormattingEnabled = true;
             this.comboBoxOsoby.Location = new System.Drawing.Point(12, 38);
@@ -90,6 +91,61 @@ namespace Terminarz_siłownia
             this.groupBoxDodanieCwiczenia.TabStop = false;
             this.groupBoxDodanieCwiczenia.Text = "Dodawanie ćwiczenia";
             // 
+            // labelDataCwiczenia
+            // 
+            this.labelDataCwiczenia.AutoSize = true;
+            this.labelDataCwiczenia.Location = new System.Drawing.Point(17, 137);
+            this.labelDataCwiczenia.Name = "labelDataCwiczenia";
+            this.labelDataCwiczenia.Size = new System.Drawing.Size(88, 15);
+            this.labelDataCwiczenia.TabIndex = 6;
+            this.labelDataCwiczenia.Text = "Data ćwiczenia:";
+            // 
+            // dateTimePickerDataCwiczenia
+            // 
+            this.dateTimePickerDataCwiczenia.CustomFormat = "";
+            this.dateTimePickerDataCwiczenia.Location = new System.Drawing.Point(13, 159);
+            this.dateTimePickerDataCwiczenia.Name = "dateTimePickerDataCwiczenia";
+            this.dateTimePickerDataCwiczenia.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerDataCwiczenia.TabIndex = 5;
+            this.dateTimePickerDataCwiczenia.Value = new System.DateTime(2022, 3, 2, 0, 0, 0, 0);
+            // 
+            // labelIloscPowtorzen
+            // 
+            this.labelIloscPowtorzen.AutoSize = true;
+            this.labelIloscPowtorzen.Location = new System.Drawing.Point(13, 82);
+            this.labelIloscPowtorzen.Name = "labelIloscPowtorzen";
+            this.labelIloscPowtorzen.Size = new System.Drawing.Size(93, 15);
+            this.labelIloscPowtorzen.TabIndex = 4;
+            this.labelIloscPowtorzen.Text = "Ilość powtórzeń:";
+            // 
+            // numericUpDownIloscPowtorzen
+            // 
+            this.numericUpDownIloscPowtorzen.Location = new System.Drawing.Point(13, 100);
+            this.numericUpDownIloscPowtorzen.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownIloscPowtorzen.Name = "numericUpDownIloscPowtorzen";
+            this.numericUpDownIloscPowtorzen.ReadOnly = true;
+            this.numericUpDownIloscPowtorzen.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDownIloscPowtorzen.TabIndex = 3;
+            this.numericUpDownIloscPowtorzen.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // buttonDodajCwiczenie
+            // 
+            this.buttonDodajCwiczenie.Location = new System.Drawing.Point(508, 34);
+            this.buttonDodajCwiczenie.Name = "buttonDodajCwiczenie";
+            this.buttonDodajCwiczenie.Size = new System.Drawing.Size(93, 65);
+            this.buttonDodajCwiczenie.TabIndex = 2;
+            this.buttonDodajCwiczenie.Text = "Dodaj ćwiczenie";
+            this.buttonDodajCwiczenie.UseVisualStyleBackColor = true;
+            this.buttonDodajCwiczenie.Click += new System.EventHandler(this.buttonDodajCwiczenie_Click);
+            // 
             // labelKategoria
             // 
             this.labelKategoria.AutoSize = true;
@@ -101,64 +157,12 @@ namespace Terminarz_siłownia
             // 
             // comboBoxKategoria
             // 
+            this.comboBoxKategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKategoria.FormattingEnabled = true;
             this.comboBoxKategoria.Location = new System.Drawing.Point(12, 37);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
             this.comboBoxKategoria.Size = new System.Drawing.Size(121, 23);
             this.comboBoxKategoria.TabIndex = 0;
-            // 
-            // buttonDodajCwiczenie
-            // 
-            this.buttonDodajCwiczenie.Location = new System.Drawing.Point(508, 34);
-            this.buttonDodajCwiczenie.Name = "buttonDodajCwiczenie";
-            this.buttonDodajCwiczenie.Size = new System.Drawing.Size(93, 65);
-            this.buttonDodajCwiczenie.TabIndex = 2;
-            this.buttonDodajCwiczenie.Text = "Dodaj ćwiczenie";
-            this.buttonDodajCwiczenie.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDownIloscPowtorzen
-            // 
-            this.numericUpDownIloscPowtorzen.Location = new System.Drawing.Point(13, 100);
-            this.numericUpDownIloscPowtorzen.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownIloscPowtorzen.Name = "numericUpDownIloscPowtorzen";
-            this.numericUpDownIloscPowtorzen.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDownIloscPowtorzen.TabIndex = 3;
-            this.numericUpDownIloscPowtorzen.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // labelIloscPowtorzen
-            // 
-            this.labelIloscPowtorzen.AutoSize = true;
-            this.labelIloscPowtorzen.Location = new System.Drawing.Point(13, 82);
-            this.labelIloscPowtorzen.Name = "labelIloscPowtorzen";
-            this.labelIloscPowtorzen.Size = new System.Drawing.Size(93, 15);
-            this.labelIloscPowtorzen.TabIndex = 4;
-            this.labelIloscPowtorzen.Text = "Ilość powtórzeń:";
-            // 
-            // dateTimePickerDataCwiczenia
-            // 
-            this.dateTimePickerDataCwiczenia.CustomFormat = "";
-            this.dateTimePickerDataCwiczenia.Location = new System.Drawing.Point(13, 159);
-            this.dateTimePickerDataCwiczenia.Name = "dateTimePickerDataCwiczenia";
-            this.dateTimePickerDataCwiczenia.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerDataCwiczenia.TabIndex = 5;
-            this.dateTimePickerDataCwiczenia.Value = new System.DateTime(2022, 3, 2, 0, 0, 0, 0);
-            // 
-            // labelDataCwiczenia
-            // 
-            this.labelDataCwiczenia.AutoSize = true;
-            this.labelDataCwiczenia.Location = new System.Drawing.Point(17, 137);
-            this.labelDataCwiczenia.Name = "labelDataCwiczenia";
-            this.labelDataCwiczenia.Size = new System.Drawing.Size(88, 15);
-            this.labelDataCwiczenia.TabIndex = 6;
-            this.labelDataCwiczenia.Text = "Data ćwiczenia:";
             // 
             // groupBoxListaCwiczen
             // 
