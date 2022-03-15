@@ -73,6 +73,7 @@ namespace Terminarz_siłownia
             this.comboBoxOsoby.Name = "comboBoxOsoby";
             this.comboBoxOsoby.Size = new System.Drawing.Size(340, 29);
             this.comboBoxOsoby.TabIndex = 0;
+            this.comboBoxOsoby.SelectedValueChanged += new System.EventHandler(this.comboBoxOsoby_SelectedValueChanged);
             // 
             // groupBoxDodanieCwiczenia
             // 
@@ -193,24 +194,28 @@ namespace Terminarz_siłownia
             // 
             // Kategoria
             // 
+            this.Kategoria.DataPropertyName = "NazwaKategorii";
             this.Kategoria.HeaderText = "Kategoria";
             this.Kategoria.Name = "Kategoria";
             this.Kategoria.ReadOnly = true;
             // 
             // IloscPowtorzen
             // 
+            this.IloscPowtorzen.DataPropertyName = "IloscPowtorzen";
             this.IloscPowtorzen.HeaderText = "Ilość powtórzeń";
             this.IloscPowtorzen.Name = "IloscPowtorzen";
             this.IloscPowtorzen.ReadOnly = true;
             // 
             // Data
             // 
+            this.Data.DataPropertyName = "DataCwiczenia";
             this.Data.HeaderText = "Data ćwiczenia";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             // 
             // CzyZrealizowane
             // 
+            this.CzyZrealizowane.DataPropertyName = "CzyZrealizowane";
             this.CzyZrealizowane.HeaderText = "Czy zrealizowane";
             this.CzyZrealizowane.Name = "CzyZrealizowane";
             this.CzyZrealizowane.ReadOnly = true;

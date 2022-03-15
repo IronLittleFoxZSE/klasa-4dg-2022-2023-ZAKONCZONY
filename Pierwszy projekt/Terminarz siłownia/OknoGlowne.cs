@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Terminarz_siłownia.Baza_danych.Context;
 using Terminarz_siłownia.Baza_danych.Model;
+using Terminarz_siłownia.Inne_klasy;
 
 namespace Terminarz_siłownia
 {
@@ -70,6 +71,7 @@ namespace Terminarz_siłownia
             bazaDanych.Cwiczenia.Add(cw);
             bazaDanych.SaveChanges();
             MessageBox.Show("Dodano ćwiczenie do bazy");
+            WyswietlCwiczeniaDlaOsoby();
         }
 
         private void WyswietlCwiczeniaDlaOsoby()
@@ -84,16 +86,29 @@ namespace Terminarz_siłownia
                from Cwiczenia c
                --join Osoba o on o.Id = c.OsobaId
                join Kategoria k on k.Id = c.KategoriaId
-               where c.OsobaId = "konktetne id"  --o.Id 
+               where c.OsobaId = "wstawić konktetne id"  --o.Id 
              
              */
             Osoba os = comboBoxOsoby.SelectedItem as Osoba;
             int idOsoby = os.Id;
 
-            var listaWynikowa = bazaDanych.Cwiczenia
-                .Include((Cwiczenie c) => c.Kategoria)
-                .Where((Cwiczenie c) => /*return*/ c.OsobaId == idOsoby).ToList();
 
+            var listaWynikowa = bazaDanych
+                .Cwiczenia
+                .Include((Cwiczenie c) => c.Kategoria)
+                .Where((Cwiczenie c) => /*return*/ c.OsobaId == idOsoby)
+                .Select((Cwiczenie c) =>  new CwiczenieDoWyswietlenia()
+                {
+                    IloscPowtorzen = c.IloscPowtorzen,
+                    DataCwiczenia = c.DataCwiczenia,
+                    NazwaKategorii = c.Kategoria.NazwaKategorii,
+                    CzyZrealizowane = c.DataCwiczenia < DateTime.Now
+
+                })
+                .OrderBy((CwiczenieDoWyswietlenia cw) => cw.DataCwiczenia)
+                .ToList();
+
+            dataGridViewListaCwiczen.AutoGenerateColumns = true;  
             dataGridViewListaCwiczen.DataSource = listaWynikowa;
 
         }
@@ -275,6 +290,11 @@ namespace Terminarz_siłownia
         }
 
         #endregion
+
+        private void comboBoxOsoby_SelectedValueChanged(object sender, EventArgs e)
+        {
+            WyswietlCwiczeniaDlaOsoby();
+        }
     }
 
     class PlanTreningowy
