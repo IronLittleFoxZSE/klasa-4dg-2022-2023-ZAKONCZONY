@@ -73,6 +73,32 @@ namespace Terminarz_siłownia
         }
 
         private void WyswietlCwiczeniaDlaOsoby()
+        {
+            /*
+             select k.NazwaKategorii,
+                    c.IloscPowtorzen,
+                    c.DataCwiczenia,
+                    CZY_ZREALIZOWANE = case when c.DataCwiczenia < GETDATE() then true
+                                            else false
+                                       end
+               from Cwiczenia c
+               --join Osoba o on o.Id = c.OsobaId
+               join Kategoria k on k.Id = c.KategoriaId
+               where c.OsobaId = "konktetne id"  --o.Id 
+             
+             */
+            Osoba os = comboBoxOsoby.SelectedItem as Osoba;
+            int idOsoby = os.Id;
+
+            var listaWynikowa = bazaDanych.Cwiczenia
+                .Include((Cwiczenie c) => c.Kategoria)
+                .Where((Cwiczenie c) => /*return*/ c.OsobaId == idOsoby).ToList();
+
+            dataGridViewListaCwiczen.DataSource = listaWynikowa;
+
+        }
+
+        private void Testowanie()
          {
             /*
              select *
@@ -189,8 +215,19 @@ namespace Terminarz_siłownia
             wynik10 = wynik11;
             var wyniik12 = wynik10.FirstOrDefault();
 
-            var wynik12 = listaStart.Where(cc => cc.IloscPowtorzen > 5).First().IloscPowtorzen;
-        }
+            var wynik12 = listaStart.Where(cc => cc.IloscPowtorzen > 5).FirstOrDefault().IloscPowtorzen;
+
+            var wynik13 = listaStart.FirstOrDefault().IloscPowtorzen;
+
+            Cwiczenie cc = listaStart.FirstOrDefault();
+            //Cwiczenie c3 = null;
+            int? ile = null;
+            if (cc != null)
+                ile = c.IloscPowtorzen;
+
+            int? ile2 = listaStart.FirstOrDefault()?.IloscPowtorzen;
+
+         }
 
         #region Uzupełnienie bazy danych 
 
