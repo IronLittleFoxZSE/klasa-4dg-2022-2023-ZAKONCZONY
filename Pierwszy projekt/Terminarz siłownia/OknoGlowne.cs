@@ -87,6 +87,7 @@ namespace Terminarz_siłownia
                --join Osoba o on o.Id = c.OsobaId
                join Kategoria k on k.Id = c.KategoriaId
                where c.OsobaId = "wstawić konktetne id"  --o.Id 
+            order by c.DataCwiczenia, k.NazwaKategorii, c.IloscPowtorzen
              
              */
             Osoba os = comboBoxOsoby.SelectedItem as Osoba;
@@ -106,6 +107,8 @@ namespace Terminarz_siłownia
 
                 })
                 .OrderBy((CwiczenieDoWyswietlenia cw) => cw.DataCwiczenia)
+                .ThenBy((CwiczenieDoWyswietlenia cw) => cw.NazwaKategorii)
+                .ThenBy((CwiczenieDoWyswietlenia cw) => cw.IloscPowtorzen)
                 .ToList();
 
             dataGridViewListaCwiczen.AutoGenerateColumns = true;  
