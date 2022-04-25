@@ -1,0 +1,17 @@
+﻿<Window x:Class="PaneleWPF.OknoWrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaneleWPF"
+        mc:Ignorable="d"
+        Title="OknoWrapPanel" Height="112" Width="507">
+    <WrapPanel Orientation="Horizontal">
+        <Button>Test button 1</Button>
+        <Button>Test button 2</Button>
+        <Button Width="100">Test button 3</Button>
+        <Button Height="100">Test button 4</Button>
+        <Button>Test button 5</Button>
+        <Button>Test button 6</Button>
+    </WrapPanel>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Pierwsza_aplikacja_Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pierwsza_aplikacja_Wpf"
+        mc:Ignorable="d"
+        Title="Pierwsza aplikacja WPF" Height="450" Width="800">
+    <Canvas>
+        <Button Width="191" Height="86" Canvas.Left="62" Canvas.Top="33">To jest opis przycisku</Button>
+        <Button Width="190" Height="86" Canvas.Left="62" Canvas.Top="137" Content="To jest opis"/>
+        <Button Width="190" Height="86" Canvas.Left="463" Canvas.Top="247" Content="To jest opis" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="51.618"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.FontSize>20</Button.FontSize>
+        </Button>
+        <Button Width="345" Height="137" Canvas.Left="400" Canvas.Top="33">
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.FontSize>20</Button.FontSize>
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Foreground="#FF082727">Multi</TextBlock>
+                    <TextBlock Foreground="Red">color</TextBlock>
+                    <TextBlock>button</TextBlock>
+                    <RadioButton>To jest radio</RadioButton>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+        <Button Name="ButtomPrzycisk" Width="190" Height="86" Canvas.Left="135" Canvas.Top="280" Content="Zdarzenie kliknięcia" Click="Button_Click"/>
+
+    </Canvas>
+</Window>
