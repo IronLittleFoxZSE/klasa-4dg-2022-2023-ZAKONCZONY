@@ -34,7 +34,7 @@
             <TextBlock Text="{Binding ElementName=OknoGlowne, Path=Dana_z_kodu_do_widoku}"/>
         </WrapPanel>
         <TextBox Text="{Binding ElementName=OknoGlowne, Path=Dana_z_widoku_do_kodu}"/>
-        <Button Content="Wymiana danych"/>
+        <Button Content="Wymiana danych" Click="ButtonBase2_OnClick"/>
     </StackPanel>
 
 </Window>
