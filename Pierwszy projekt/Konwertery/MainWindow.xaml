@@ -1,0 +1,41 @@
+﻿<Window x:Class="Konwertery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Konwertery"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Name="OknoGlowne">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="Ta kontrolka będzie ukrywana" 
+                   Height="40" 
+                   FontSize="20"
+                   Margin="10"
+                   Visibility="{Binding ElementName=OknoGlowne, Path=WidocznoscV1}"/>
+        <Button Content="Ukryj kontrolkę" 
+                Height="30"
+                Name="ButtonUkryjV1"
+                Click="ButtonUkryjV1_OnClick"/>
+        <TextBlock Text="Ta kontrolka będzie ukrywana inną metodą" 
+                   Height="40" 
+                   FontSize="20"
+                   Margin="10"
+                   Visibility="{Binding ElementName=OknoGlowne, 
+                                        Path=WidocznoscV2,
+                                        Converter={StaticResource BoolToVisibilityConverter}
+            }"/>
+        <Button Content="Ukryj kontrolkę inną metodą" 
+                Height="30"
+                Name="ButtonUkryjV2"
+                Click="ButtonUkryjV2_OnClick"/>
+        <TextBlock Text="{Binding ElementName=OknoGlowne, Path=CzyZazanczony}" 
+                   Height="40" 
+                   FontSize="20"
+                   Margin="10"/>
+        <CheckBox Content="Kliknij mnie" 
+                  IsChecked="{Binding ElementName=OknoGlowne, Path=CzyZazanczony}"/>
+    </StackPanel>
+</Window>
