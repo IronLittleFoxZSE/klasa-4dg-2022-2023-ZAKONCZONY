@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konwertery"
+        xmlns:naszKonwertery="clr-namespace:Konwertery.NaszKonwertery"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Name="OknoGlowne">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <naszKonwertery:BoolToDescriptionConverter x:Key="BoolToDescriptionConverter"/>
     </Window.Resources>
     <StackPanel>
         <TextBlock Text="Ta kontrolka będzie ukrywana" 
@@ -31,11 +33,18 @@
                 Height="30"
                 Name="ButtonUkryjV2"
                 Click="ButtonUkryjV2_OnClick"/>
-        <TextBlock Text="{Binding ElementName=OknoGlowne, Path=CzyZazanczony}" 
+        <TextBlock Text="{Binding ElementName=OknoGlowne, 
+                                  Path=CzyZazanczony,
+                                  Converter={StaticResource BoolToDescriptionConverter}}" 
                    Height="40" 
                    FontSize="20"
                    Margin="10"/>
         <CheckBox Content="Kliknij mnie" 
                   IsChecked="{Binding ElementName=OknoGlowne, Path=CzyZazanczony}"/>
+
+        <TextBlock Text="----------------------------------------------------------------------------"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+
     </StackPanel>
 </Window>
