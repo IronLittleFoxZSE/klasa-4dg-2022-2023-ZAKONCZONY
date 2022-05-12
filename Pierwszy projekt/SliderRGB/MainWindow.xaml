@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:SliderRGB"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Name="OknoGlowne">
+    <Window.Resources>
+        <local:RGBComponentToColorConverter x:Key="RGBComponentToColorConverter"/>
+        <local:HexStringToColorComponent x:Key="HexStringToColorComponent"/>
+    </Window.Resources>
     <StackPanel>
         <WrapPanel>
             <TextBlock Text="Red:" FontSize="20" FontWeight="Bold" Width="100"/>
@@ -28,5 +32,25 @@
                     Value="{Binding ElementName=OknoGlowne, Path=BlueComponent}"/>
             <TextBlock Text="{Binding ElementName=OknoGlowne, Path=BlueComponent}"/>
         </WrapPanel>
+        <Rectangle Width="100" Height="100">
+            <Rectangle.Fill>
+                <MultiBinding Converter="{StaticResource RGBComponentToColorConverter}">
+                    <Binding ElementName="OknoGlowne" Path="RedComponent" Mode="OneWay"/>
+                    <Binding ElementName="OknoGlowne" Path="GreenComponent" Mode="OneWay"/>
+                    <Binding ElementName="OknoGlowne" Path="BlueComponent" Mode="OneWay"/>
+                </MultiBinding>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="Ustaw kolor czerwony" Click="ButtonBase_OnClick"/>
+        <TextBox>
+            <TextBox.Text>
+                <MultiBinding Converter="{StaticResource HexStringToColorComponent}" UpdateSourceTrigger="PropertyChanged">
+                    <Binding ElementName="OknoGlowne" Path="RedComponent"/>
+                    <Binding ElementName="OknoGlowne" Path="GreenComponent"/>
+                    <Binding ElementName="OknoGlowne" Path="BlueComponent"/>
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+
     </StackPanel>
 </Window>
