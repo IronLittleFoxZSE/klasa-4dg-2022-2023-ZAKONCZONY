@@ -101,6 +101,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilitisWpf", "UtilitisWpf\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektUczniowie", "ProjektUczniowie\ProjektUczniowie.csproj", "{4F817325-C295-4296-A86A-8B313DC4EAF1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Przelicznik", "Przelicznik\Przelicznik.csproj", "{351FD830-0EE1-488A-A7A9-88D58211377B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -259,6 +261,10 @@ Global
 		{4F817325-C295-4296-A86A-8B313DC4EAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F817325-C295-4296-A86A-8B313DC4EAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F817325-C295-4296-A86A-8B313DC4EAF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351FD830-0EE1-488A-A7A9-88D58211377B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351FD830-0EE1-488A-A7A9-88D58211377B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351FD830-0EE1-488A-A7A9-88D58211377B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351FD830-0EE1-488A-A7A9-88D58211377B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -309,6 +315,7 @@ Global
 		{F78C2252-4F4F-48A4-9A8B-0C14C0788CB6} = {7F5F2A91-7959-4C7E-96EA-CB1CEE65490F}
 		{668463D7-A270-42C9-ADFF-4137FCEE120C} = {7F5F2A91-7959-4C7E-96EA-CB1CEE65490F}
 		{4F817325-C295-4296-A86A-8B313DC4EAF1} = {7A4ACE6A-CF20-4E31-BFB6-750B0060F747}
+		{351FD830-0EE1-488A-A7A9-88D58211377B} = {7A4ACE6A-CF20-4E31-BFB6-750B0060F747}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DC62348-C442-45A0-B442-3212B816E6DF}
