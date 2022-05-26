@@ -37,7 +37,7 @@
         </ComboBox>
         <TextBlock Text="Wartość:"/>
         <WrapPanel>
-            <TextBox Margin="30" Width="200" Height="30" Text="{Binding WpisanaWartosc}"/>
+            <TextBox Margin="30" Width="200" Height="30" Text="{Binding WpisanaWartosc, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Content="Przelicz" Margin="30" Width="100" Height="100" Command="{Binding PrzeliczCommand}"/>
         </WrapPanel>
         <TextBlock Text="{Binding WynikPrzeliczenia}" FontSize="15" TextAlignment="Center"/>

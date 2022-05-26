@@ -119,7 +119,7 @@ namespace PrzelicznikMVVM.ViewModel
             get
             {
                 if (_przeliczCommand == null)
-                    _przeliczCommand = new RelayCommand<object>(Przelicz);
+                    _przeliczCommand = new RelayCommand<object>(Przelicz, (o)=> int.TryParse(WpisanaWartosc, out int w));
                 return _przeliczCommand;
             }
         }
