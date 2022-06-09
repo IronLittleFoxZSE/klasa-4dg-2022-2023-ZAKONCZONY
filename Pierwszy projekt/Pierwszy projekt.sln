@@ -103,7 +103,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektUczniowie", "Projekt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Przelicznik", "Przelicznik\Przelicznik.csproj", "{351FD830-0EE1-488A-A7A9-88D58211377B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrzelicznikMVVM", "PrzelicznikMVVM\PrzelicznikMVVM.csproj", "{BBF3493D-7DCB-432B-B295-4C28BCCF61F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrzelicznikMVVM", "PrzelicznikMVVM\PrzelicznikMVVM.csproj", "{BBF3493D-7DCB-432B-B295-4C28BCCF61F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inf04 Zadanie 1", "Inf04 Zadanie 1\Inf04 Zadanie 1.csproj", "{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -271,6 +273,10 @@ Global
 		{BBF3493D-7DCB-432B-B295-4C28BCCF61F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBF3493D-7DCB-432B-B295-4C28BCCF61F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBF3493D-7DCB-432B-B295-4C28BCCF61F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -323,6 +329,7 @@ Global
 		{4F817325-C295-4296-A86A-8B313DC4EAF1} = {7A4ACE6A-CF20-4E31-BFB6-750B0060F747}
 		{351FD830-0EE1-488A-A7A9-88D58211377B} = {7A4ACE6A-CF20-4E31-BFB6-750B0060F747}
 		{BBF3493D-7DCB-432B-B295-4C28BCCF61F6} = {7F5F2A91-7959-4C7E-96EA-CB1CEE65490F}
+		{8DB0E92B-8B6F-43F2-B1F9-BCC5D69B2A4B} = {A91D1C5F-C6DF-4EA0-BC2A-C7663A17FFA0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DC62348-C442-45A0-B442-3212B816E6DF}
