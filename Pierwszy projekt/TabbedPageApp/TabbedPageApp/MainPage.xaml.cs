@@ -6,20 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace NavigationPageApp
+namespace TabbedPageApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            this.Navigation.PushAsync(new AboutPage());
-        }
     }
 }
-
-

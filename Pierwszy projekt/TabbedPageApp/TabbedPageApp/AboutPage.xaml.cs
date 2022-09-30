@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NavigationPageApp
+namespace TabbedPageApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
@@ -15,16 +15,6 @@ namespace NavigationPageApp
         public AboutPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            this.Navigation.PopAsync(true);
-        }
-
-        private void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
-        {
-            this.Navigation.PopAsync();
         }
     }
 }

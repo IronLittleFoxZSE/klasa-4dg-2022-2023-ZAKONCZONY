@@ -8,8 +8,14 @@
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center"/>
         <Entry />
+        
         <Button Text="Go to about page"
                 Clicked="Button_Clicked"/>
+        <Label Text="Go to aboute page">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Button_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
     </StackLayout>
 
 </ContentPage>
