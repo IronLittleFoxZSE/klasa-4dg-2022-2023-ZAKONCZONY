@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace TabbedPageApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistoryPage : ContentPage
+    public partial class ArchPage : ContentPage
     {
-        public HistoryPage()
+        public ArchPage()
         {
             InitializeComponent();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ArchPage());
+            Navigation.PopAsync();
         }
     }
 }

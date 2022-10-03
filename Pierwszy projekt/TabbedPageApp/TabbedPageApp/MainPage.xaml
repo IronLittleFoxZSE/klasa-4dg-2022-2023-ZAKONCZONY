@@ -15,7 +15,7 @@
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="CenterAndExpand"/>
     </ContentPage>
-    
+
     <tabbedPageApp:AboutPage 
         Title="About"
         IconImageSource="about.png"/>
@@ -25,7 +25,10 @@
     <tabbedPageApp:CoursesPage 
         Title="Courses"
         IconImageSource="courses.png"/>
-    <tabbedPageApp:HistoryPage 
-        Title="History"/>
+    <NavigationPage Title="History N">
+        <x:Arguments>
+            <tabbedPageApp:HistoryPage Title="History"/>
+        </x:Arguments>
+    </NavigationPage>
 
 </TabbedPage>
