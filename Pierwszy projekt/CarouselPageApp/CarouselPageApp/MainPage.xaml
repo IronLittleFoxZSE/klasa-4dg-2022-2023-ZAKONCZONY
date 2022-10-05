@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CarouselPageApp.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:viewmodel="clr-namespace:CarouselPageApp.ViewModel"
+              x:Class="CarouselPageApp.MainPage"
+              ItemsSource="{Binding ListOfPhoto}">
+
+    <CarouselPage.BindingContext>
+        <viewmodel:PhotoInfoViewModel/>
+    </CarouselPage.BindingContext>
 
 
-    <ContentPage>
+    <!--<ContentPage>
         <StackLayout VerticalOptions="Center">
             <Label Text="Pies"
                    FontSize="Large" 
@@ -29,6 +35,20 @@
                    HorizontalOptions="Center"/>
             <Image Source="https://img.freepik.com/darmowe-wektory/ladny-kot-i-pies-corgi-kreskowka-wektor-ikona-ilustracja-koncepcja-ikona-przyjaciela-zwierzat-na-bialym-tle-premium-wektor-plaski-styl-kreskowki_138676-3558.jpg"/>
         </StackLayout>
-    </ContentPage>
+    </ContentPage>-->
+
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="{Binding Name}"
+                   FontSize="Large" 
+                   HorizontalOptions="Center"/>
+                    <Image Source="{Binding PhotoUrl}"/>
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
+    
 
 </CarouselPage>

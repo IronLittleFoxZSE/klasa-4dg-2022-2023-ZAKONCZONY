@@ -1,9 +1,8 @@
-﻿using CarouselPageApp.ViewModel;
-using System;
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarouselPageApp
+namespace FirstPracticalTaskApp
 {
     public partial class App : Application
     {
@@ -11,7 +10,7 @@ namespace CarouselPageApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

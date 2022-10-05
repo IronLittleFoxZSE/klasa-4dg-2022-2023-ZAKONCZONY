@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarouselPageApp.Model
+namespace FirstPracticalTaskApp.Model
 {
     public class PhotoInfo
     {

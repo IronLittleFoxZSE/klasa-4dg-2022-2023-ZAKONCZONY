@@ -1,16 +1,20 @@
-﻿using CarouselPageApp.Model;
+﻿using FirstPracticalTaskApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarouselPageApp.ViewModel
+namespace FirstPracticalTaskApp.ViewModel
 {
     public class PhotoInfoViewModel
     {
+        public string Title { get; set; }
+
         public List<PhotoInfo> ListOfPhoto { get; set; }
 
         public PhotoInfoViewModel()
         {
+            Title = "Lista zdjęć";
+
             ListOfPhoto = new List<PhotoInfo>();
 
             ListOfPhoto.Add(new PhotoInfo()
