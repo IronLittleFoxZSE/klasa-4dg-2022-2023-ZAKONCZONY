@@ -15,6 +15,9 @@
         <Button Text="Wyświetl zdjęcia lista"
                 x:Name="buttonShowImageList"
                 Clicked="buttonShowImageList_Clicked"/>
+        <Button Text="Dodaj zdjęcie"
+                x:Name="buttonShowAddPhoto"
+                Clicked="buttonShowAddPhoto_Clicked"/>
     </StackLayout>
 
 </ContentPage>

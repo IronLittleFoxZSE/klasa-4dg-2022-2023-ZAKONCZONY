@@ -1,21 +1,46 @@
 ﻿using FirstPracticalTaskApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 
 namespace FirstPracticalTaskApp.ViewModel
 {
-    public class PhotoInfoViewModel
+    public class PhotoInfoViewModel: INotifyPropertyChanged
     {
         public string Title { get; set; }
 
-        public List<PhotoInfo> ListOfPhoto { get; set; }
+        public ObservableCollection<PhotoInfo> ListOfPhoto { get; set; }
+        /*private List<PhotoInfo> _listOfPhoto;
+        public List<PhotoInfo> ListOfPhoto
+        { 
+            get
+            {
+                return _listOfPhoto;
+            }
+            set
+            {
+                _listOfPhoto = value;
+                OnPropertyChanged(nameof(ListOfPhoto));
+            }
+        }*/
+
+        #region INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
 
         public PhotoInfoViewModel()
         {
             Title = "Lista zdjęć";
 
-            ListOfPhoto = new List<PhotoInfo>();
+            ListOfPhoto = new ObservableCollection<PhotoInfo>();
 
             ListOfPhoto.Add(new PhotoInfo()
             {
@@ -33,6 +58,15 @@ namespace FirstPracticalTaskApp.ViewModel
             {
                 Name = "Kotki",
                 PhotoUrl = "https://img.freepik.com/darmowe-wektory/ladny-kot-i-pies-corgi-kreskowka-wektor-ikona-ilustracja-koncepcja-ikona-przyjaciela-zwierzat-na-bialym-tle-premium-wektor-plaski-styl-kreskowki_138676-3558.jpg"
+            });
+        }
+
+        public void AddPhoto(string name, string url)
+        {
+            ListOfPhoto.Add(new PhotoInfo()
+            {
+                Name = name,
+                PhotoUrl = url
             });
         }
 
