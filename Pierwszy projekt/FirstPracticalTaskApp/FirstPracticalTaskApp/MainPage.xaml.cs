@@ -39,6 +39,9 @@ namespace FirstPracticalTaskApp
             Navigation.PushAsync(new AddPhotoPage(ViewModel));
         }
 
-        
+        private void buttonBinding_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new BindingPage());
+        }
     }
 }

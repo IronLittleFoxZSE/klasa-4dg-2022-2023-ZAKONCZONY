@@ -18,6 +18,9 @@
         <Button Text="Dodaj zdjęcie"
                 x:Name="buttonShowAddPhoto"
                 Clicked="buttonShowAddPhoto_Clicked"/>
+        <Button Text="Omówienie bindowania"
+                x:Name="buttonBinding"
+                Clicked="buttonBinding_Clicked"/>
     </StackLayout>
 
 </ContentPage>

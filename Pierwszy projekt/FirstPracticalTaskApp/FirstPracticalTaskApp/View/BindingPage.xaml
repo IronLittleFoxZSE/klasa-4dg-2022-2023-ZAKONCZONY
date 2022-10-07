@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstPracticalTaskApp.View.BindingPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding OwnMessage}">
+            <Label Text="Welcome to Binding Page"/>
+            <Label BindingContext="{x:Reference thisPage}" 
+                   Text="{Binding Message}"/>
+            <Button Text="Zmiana komunikatu"
+                    Clicked="Button_Clicked"/>
+
+            <Label Text="{Binding NumberOfMessage}"/>
+            <Label Text="{Binding Message}"/>
+            <Button Text="Zmiana komunikatu obiektu"
+                    Clicked="Button_Clicked_1"/>
+            <Button Text="Zmiana komunikatu obiektu 2"
+                    Clicked="Button_Clicked_2"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
