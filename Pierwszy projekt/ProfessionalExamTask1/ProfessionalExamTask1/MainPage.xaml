@@ -12,10 +12,14 @@
                 <Entry x:Name="entryName"
                        Text="{Binding Name}"/>
                 <Label Text="{Binding MessageErrorName}"
-                       IsVisible="{Binding VisibleErrorName}"/>
+                       IsVisible="{Binding VisibleErrorName}"
+                       TextColor="Red"/>
                 <Label Text="Podaj wiek:"/>
                 <Entry x:Name="entryAge"
                        Text="{Binding StrAge}"/>
+                <Label Text="{Binding MessageErrorAge}"
+                       IsVisible="{Binding VisibleErrorAge}"
+                       TextColor="Red"/>
             </StackLayout>
         </Frame>
         <StackLayout Orientation="Horizontal">

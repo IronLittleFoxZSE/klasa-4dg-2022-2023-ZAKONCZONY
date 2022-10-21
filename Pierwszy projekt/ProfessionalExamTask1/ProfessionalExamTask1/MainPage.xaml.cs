@@ -69,11 +69,10 @@ namespace ProfessionalExamTask1
         }
 
         private string _messageErrorName;
-
         public string MessageErrorName
         {
             get { return _messageErrorName; }
-            set 
+            set
             {
                 _messageErrorName = value;
                 OnPropertyChanged();
@@ -81,7 +80,28 @@ namespace ProfessionalExamTask1
             }
         }
 
+        private string _messageErrorAge;
+        public string MessageErrorAge
+        {
+            get { return _messageErrorAge; }
+            set 
+            {
+                _messageErrorAge = value;
+                OnPropertyChanged();
+                VisibleErrorAge = !string.IsNullOrEmpty(_messageErrorAge);
+            }
+        }
 
+        private bool _visibleErrorAge;
+        public bool VisibleErrorAge
+        {
+            get { return _visibleErrorAge; }
+            set
+            {
+                _visibleErrorAge = value;
+                OnPropertyChanged();
+            }
+        }
 
         private ICommand _commandCheckBinding;
         public ICommand CommandCheckBinding
@@ -132,6 +152,7 @@ namespace ProfessionalExamTask1
                     _commandCheckBindingAllErrors = new Command(() =>
                     {
                         MessageErrorName = "";
+                        MessageErrorAge = "";
 
                         HelloMessage = "";
                         LegalAgeMessage = "";
@@ -154,6 +175,8 @@ namespace ProfessionalExamTask1
                         {
                             if (dictionaryMessages.ContainsKey("Imie"))
                                 MessageErrorName = dictionaryMessages["Imie"];
+                            if (dictionaryMessages.ContainsKey("Wiek"))
+                                MessageErrorAge = dictionaryMessages["Wiek"];
 
                             return;
                         }
