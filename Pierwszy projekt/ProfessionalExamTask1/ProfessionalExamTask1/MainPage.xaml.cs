@@ -1,0 +1,210 @@
+﻿using ProfessionalExamTask1.Validation;
+using ProfessionalExamTask1.Validation.TypesOfValidation;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace ProfessionalExamTask1
+{
+    public partial class MainPage : ContentPage
+    {
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set 
+            { 
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _strAge;
+        public string StrAge
+        {
+            get { return _strAge; }
+            set 
+            { 
+                _strAge = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _helloMessage;
+        public string HelloMessage
+        {
+            get { return _helloMessage; }
+            set 
+            { 
+                _helloMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _legalAgeMessage;
+        public string LegalAgeMessage
+        {
+            get { return _legalAgeMessage; }
+            set 
+            { 
+                _legalAgeMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _visibleErrorName;
+        public bool VisibleErrorName
+        {
+            get { return _visibleErrorName; }
+            set 
+            { 
+                _visibleErrorName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _messageErrorName;
+
+        public string MessageErrorName
+        {
+            get { return _messageErrorName; }
+            set 
+            {
+                _messageErrorName = value;
+                OnPropertyChanged();
+                VisibleErrorName = !string.IsNullOrEmpty(_messageErrorName);
+            }
+        }
+
+
+
+        private ICommand _commandCheckBinding;
+        public ICommand CommandCheckBinding
+        {
+            get 
+            { 
+                if (_commandCheckBinding == null)
+                {
+                    _commandCheckBinding = new Command(() =>
+                    {
+                        Validate validate = new Validate();
+                        validate.AddValidator(new ValidateString(Name, "Imie",
+                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                            {
+                                new ValidateStringEmpty()
+                            }));
+                        validate.AddValidator(new ValidateString(StrAge, "Wiek",
+                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                            {
+                                new ValidateStringEmpty(),
+                                new ValidateStringIsNumber(),
+                                new ValidateStringNumberIsInRange(1,150)
+                            }));
+
+                        if (!validate.Validation(out string message))
+                        {
+                            HelloMessage = message;
+                            LegalAgeMessage = "";
+                            return;
+                        }
+
+                        HelloMessage = "Witaj " + Name;
+                        LegalAgeMessage = ConvertAgeStringToInt(StrAge) >= 18 ? "Pełnoletni" : "Niepełnoletni";
+                    });
+                }
+                return _commandCheckBinding; 
+            }
+            set { _commandCheckBinding = value; }
+        }
+
+        private ICommand _commandCheckBindingAllErrors;
+        public ICommand CommandCheckBindingAllErrors
+        {
+            get
+            {
+                if (_commandCheckBindingAllErrors == null)
+                {
+                    _commandCheckBindingAllErrors = new Command(() =>
+                    {
+                        MessageErrorName = "";
+
+                        HelloMessage = "";
+                        LegalAgeMessage = "";
+
+                        Validate validate = new Validate();
+                        validate.AddValidator(new ValidateString(Name, "Imie",
+                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                            {
+                                new ValidateStringEmpty()
+                            }));
+                        validate.AddValidator(new ValidateString(StrAge, "Wiek",
+                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                            {
+                                new ValidateStringEmpty(),
+                                new ValidateStringIsNumber(),
+                                new ValidateStringNumberIsInRange(1,150)
+                            }));
+
+                        if (!validate.Validation(out Dictionary<string,string> dictionaryMessages))
+                        {
+                            if (dictionaryMessages.ContainsKey("Imie"))
+                                MessageErrorName = dictionaryMessages["Imie"];
+
+                            return;
+                        }
+
+                        HelloMessage = "Witaj " + Name;
+                        LegalAgeMessage = ConvertAgeStringToInt(StrAge) >= 18 ? "Pełnoletni" : "Niepełnoletni";
+                    });
+                }
+                return _commandCheckBindingAllErrors;
+            }
+            set { _commandCheckBindingAllErrors = value; }
+        }
+
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
+        public int ConvertAgeStringToInt(string strAge)
+        {
+            return int.Parse(strAge);
+        }
+
+        private void buttonCheck_Clicked(object sender, EventArgs e)
+        {
+            string name = entryName.Text;
+            string strAge = entryAge.Text;
+            Validate validate = new Validate();
+            validate.AddValidator(new ValidateString(name, "Imie",
+                new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                {
+                    new ValidateStringEmpty()
+                }));
+            validate.AddValidator(new ValidateString(strAge, "Wiek",
+                new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                {
+                    new ValidateStringEmpty(),
+                    new ValidateStringIsNumber(),
+                    new ValidateStringNumberIsInRange(1,150)
+                }));
+
+            if (!validate.Validation(out string message))
+            {
+                labelHello.Text = message;
+                labelLegalAge.Text = "";
+                return;
+            }
+
+            labelHello.Text = "Witaj " + name;
+            labelLegalAge.Text = ConvertAgeStringToInt(strAge) >= 18 ? "Pełnoletni" : "Niepełnoletni";
+
+        }
+    }
+}

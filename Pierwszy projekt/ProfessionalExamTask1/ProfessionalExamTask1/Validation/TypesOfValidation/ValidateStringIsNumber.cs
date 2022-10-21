@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ProfessionalExamTask1.Validation.TypesOfValidation
+{
+    class ValidateStringIsNumber: ITypesOfValidation
+    {
+        public bool Validate(string value, out string message)
+        {
+            message = "";
+            if (!int.TryParse(value, out _))
+            {
+                message = "Podana wartość nie jest liczbą";
+                return false;
+            }
+            return true;
+        }
+    }
+}

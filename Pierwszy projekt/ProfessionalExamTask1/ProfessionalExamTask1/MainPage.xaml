@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProfessionalExamTask1.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <StackLayout>
+                <Label Text="Podaj imie:"/>
+                <Entry x:Name="entryName"
+                       Text="{Binding Name}"/>
+                <Label Text="{Binding MessageErrorName}"
+                       IsVisible="{Binding VisibleErrorName}"/>
+                <Label Text="Podaj wiek:"/>
+                <Entry x:Name="entryAge"
+                       Text="{Binding StrAge}"/>
+            </StackLayout>
+        </Frame>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Sprawdź"
+                    x:Name="buttonCheck"
+                    Clicked="buttonCheck_Clicked"/>
+            <Button Text="Sprawdź (bindowanie)"
+                    x:Name="buttonCheckBinding"
+                    Command="{Binding CommandCheckBinding}"/>
+            <Button Text="Sprawdź (bindowanie, wszystkie błędy)"
+                    x:Name="buttonCheckBindingAllErrors"
+                    Command="{Binding CommandCheckBindingAllErrors}"/>
+        </StackLayout>
+        <Label Text="{Binding HelloMessage}"
+               x:Name="labelHello"/>
+        <Label Text="{Binding LegalAgeMessage}"
+               x:Name="labelLegalAge"/>
+    </StackLayout>
+
+</ContentPage>
