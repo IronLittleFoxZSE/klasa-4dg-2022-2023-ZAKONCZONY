@@ -113,13 +113,13 @@ namespace ProfessionalExamTask1
                     _commandCheckBinding = new Command(() =>
                     {
                         Validate validate = new Validate();
-                        validate.AddValidator(new ValidateString(Name, "Imie",
-                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                        validate.AddValidator(new Validator<string>(Name, "Imie",
+                            new List<Validation.TypesOfValidation.ISpecyficValidation<string>>()
                             {
                                 new ValidateStringEmpty()
                             }));
-                        validate.AddValidator(new ValidateString(StrAge, "Wiek",
-                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+                        validate.AddValidator(new Validator<string>(StrAge, "Wiek",
+                            new List<Validation.TypesOfValidation.ISpecyficValidation<string>>()
                             {
                                 new ValidateStringEmpty(),
                                 new ValidateStringIsNumber(),
@@ -158,13 +158,15 @@ namespace ProfessionalExamTask1
                         LegalAgeMessage = "";
 
                         Validate validate = new Validate();
-                        validate.AddValidator(new ValidateString(Name, "Imie",
-                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+
+                        validate.AddValidator(new Validator<string>(Name, "Imie",
+                            new List<Validation.TypesOfValidation.ISpecyficValidation<string>>()
                             {
                                 new ValidateStringEmpty()
                             }));
-                        validate.AddValidator(new ValidateString(StrAge, "Wiek",
-                            new List<Validation.TypesOfValidation.ITypesOfValidation>()
+
+                        validate.AddValidator(new Validator<string>(StrAge, "Wiek",
+                            new List<Validation.TypesOfValidation.ISpecyficValidation<string>>()
                             {
                                 new ValidateStringEmpty(),
                                 new ValidateStringIsNumber(),
@@ -207,14 +209,14 @@ namespace ProfessionalExamTask1
 
             Validate validate = new Validate();
 
-            validate.AddValidator(new ValidateString(name, "Imie",
-                new List<Validation.TypesOfValidation.ITypesOfValidation>()
+            validate.AddValidator(new Validator<string>(name, "Imie",
+                new List<ISpecyficValidation<string>>()
                 {
                     new ValidateStringEmpty()
                 }));
 
-            validate.AddValidator(new ValidateString(strAge, "Wiek",
-                new List<Validation.TypesOfValidation.ITypesOfValidation>()
+            validate.AddValidator(new Validator<string>(strAge, "Wiek",
+                new List<ISpecyficValidation<string>>()
                 {
                     new ValidateStringEmpty(),
                     new ValidateStringIsNumber(),

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProfessionalExamTask1.Validation.TypesOfValidation
 {
-    class ValidateStringIsNumber: ITypesOfValidation
+    class ValidateStringIsNumber: ISpecyficValidation<string>
     {
         public bool Validate(string value, out string message)
         {

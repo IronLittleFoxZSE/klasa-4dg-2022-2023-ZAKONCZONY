@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProfessionalExamTask1.Validation.TypesOfValidation
 {
-    public interface ITypesOfValidation
+    public interface ISpecyficValidation<T>
     {
-        bool Validate(string value, out string message);
+        bool Validate(T value, out string message);
     }
 }

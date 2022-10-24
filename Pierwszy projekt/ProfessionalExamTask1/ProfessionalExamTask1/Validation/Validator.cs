@@ -5,13 +5,13 @@ using System.Text;
 
 namespace ProfessionalExamTask1.Validation
 {
-    public class ValidateString: IValidationTypes
+    public class Validator<T>: IValidationTypes
     {
-        private string value;
+        private T value;
         public string Name { get; set; }
-        private List<ITypesOfValidation> typesOfValidationList; 
+        private List<ISpecyficValidation<T>> typesOfValidationList; 
 
-        public ValidateString(string value, string name, List<ITypesOfValidation> typesOfValidationList)
+        public Validator(T value, string name, List<ISpecyficValidation<T>> typesOfValidationList)
         {
             this.value = value;
             this.Name = name;
@@ -21,7 +21,7 @@ namespace ProfessionalExamTask1.Validation
         public bool Validate(out string message)
         {
             message = "";
-            foreach(ITypesOfValidation typesOfValidation in typesOfValidationList)
+            foreach(ISpecyficValidation<T> typesOfValidation in typesOfValidationList)
             {
                 if (!typesOfValidation.Validate(value, out message))
                 {

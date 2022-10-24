@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProfessionalExamTask1.Validation.TypesOfValidation
 {
-    class ValidateStringNumberIsInRange: ITypesOfValidation
+    class ValidateStringNumberIsInRange: ISpecyficValidation<string>
     {
         private int lowRange;
         private int highRange;
