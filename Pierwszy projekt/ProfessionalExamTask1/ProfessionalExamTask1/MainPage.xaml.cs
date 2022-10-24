@@ -204,12 +204,15 @@ namespace ProfessionalExamTask1
         {
             string name = entryName.Text;
             string strAge = entryAge.Text;
+
             Validate validate = new Validate();
+
             validate.AddValidator(new ValidateString(name, "Imie",
                 new List<Validation.TypesOfValidation.ITypesOfValidation>()
                 {
                     new ValidateStringEmpty()
                 }));
+
             validate.AddValidator(new ValidateString(strAge, "Wiek",
                 new List<Validation.TypesOfValidation.ITypesOfValidation>()
                 {
@@ -227,7 +230,6 @@ namespace ProfessionalExamTask1
 
             labelHello.Text = "Witaj " + name;
             labelLegalAge.Text = ConvertAgeStringToInt(strAge) >= 18 ? "Pełnoletni" : "Niepełnoletni";
-
         }
     }
 }
