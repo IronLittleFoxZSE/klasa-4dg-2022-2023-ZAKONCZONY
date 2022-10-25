@@ -206,6 +206,7 @@ namespace ProfessionalExamTask1
         {
             string name = entryName.Text;
             string strAge = entryAge.Text;
+            string adres = "ulica Majowa 7, kielce";
 
             Validate validate = new Validate();
 
@@ -222,6 +223,13 @@ namespace ProfessionalExamTask1
                     new ValidateStringIsNumber(),
                     new ValidateStringNumberIsInRange(1,150)
                 }));
+
+            validate.AddValidator(new Validator<string>(adres, "Adres",
+               new List<ISpecyficValidation<string>>()
+               {
+                    new ValidateStringEmpty(),
+                    //new ValidateAdressExists()
+               }));
 
             if (!validate.Validation(out string message))
             {
