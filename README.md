@@ -8,4 +8,4 @@ Android Debug Bridge (ADB) https://forum.xda-developers.com/attachment.php?attac
 
 
 EGZAMIN:
-https://egzamin-inf04.blogspot.com/2022/09/arkusz-inf04-02-2206-sg.html
+https://egzamin-inf04.blogspot.com/2022/09/arkusz-inf04-01-2206-sg.html
