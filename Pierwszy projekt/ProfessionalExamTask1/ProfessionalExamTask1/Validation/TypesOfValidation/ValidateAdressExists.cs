@@ -10,13 +10,13 @@ namespace ProfessionalExamTask1.Validation.TypesOfValidation
         {
             
            if (istnieje na mapie google istnieje adres "value")
-                {
+            {
                 message = "";
                 rerurn true;
-                    }
+            }
             else
             {
-                message = "Nie istnieje adres"
+                message = "Nie istnieje adres";
                 return false;
             }
         }

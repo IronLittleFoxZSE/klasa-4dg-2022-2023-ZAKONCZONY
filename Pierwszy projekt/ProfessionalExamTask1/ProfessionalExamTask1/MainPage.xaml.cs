@@ -225,11 +225,11 @@ namespace ProfessionalExamTask1
                 }));
 
             validate.AddValidator(new Validator<string>(adres, "Adres",
-               new List<ISpecyficValidation<string>>()
-               {
+                new List<ISpecyficValidation<string>>()
+                {
                     new ValidateStringEmpty(),
                     //new ValidateAdressExists()
-               }));
+                }));
 
             if (!validate.Validation(out string message))
             {
