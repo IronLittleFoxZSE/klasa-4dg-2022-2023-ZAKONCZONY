@@ -9,3 +9,8 @@ Android Debug Bridge (ADB) https://forum.xda-developers.com/attachment.php?attac
 
 EGZAMIN:
 https://egzamin-inf04.blogspot.com/2022/09/arkusz-inf04-01-2206-sg.html
+
+
+
+
+https://learn.microsoft.com/pl-pl/xamarin/essentials/?context=xamarin%2Fandroid
