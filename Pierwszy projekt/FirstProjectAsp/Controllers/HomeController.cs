@@ -28,6 +28,12 @@ namespace FirstProjectAsp.Controllers
             return View();
         }
 
+        
+        public string NewAction()
+        {
+            return "Hello world!!!!";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
