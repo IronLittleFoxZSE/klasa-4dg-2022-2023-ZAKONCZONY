@@ -1,0 +1,28 @@
+﻿@model List<PersonDto>
+
+
+@using(Html.BeginForm("SearchPerson", "People", FormMethod.Get))
+{ 
+    <div>
+        Imie: @Html.TextBox("name", null, new { @class = "bg-primary" })
+        <input type="submit" value="Szukaj"/>
+    </div>
+}
+
+<h1>Lista wyszukanych osób</h1>
+
+<table class="table table-striped">
+    <tr>
+        <td>Imie</td>
+        <td>Nazwisko</td>
+        <td>Wiek</td>
+
+        @foreach (PersonDto item in Model)
+        {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Age</td>
+        </tr>
+    }
+</table>
