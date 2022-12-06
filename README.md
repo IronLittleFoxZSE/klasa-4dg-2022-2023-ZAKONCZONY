@@ -18,3 +18,6 @@ https://learn.microsoft.com/pl-pl/xamarin/essentials/?context=xamarin%2Fandroid
  
 Do przeczytania 
 https://www.droptica.pl/blog/czym-sa-metodyki-zarzadzania-projektami-i-ktora-wybrac-dla-twojego-projektu/
+
+Egzamin 
+https://forms.office.com/e/mnK38KxnPz
