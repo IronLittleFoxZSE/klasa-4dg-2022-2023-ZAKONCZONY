@@ -1,4 +1,5 @@
 using FirstProjectAsp.Database.Context;
+using FirstProjectAsp.Database.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,8 @@ namespace FirstProjectAsp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<PeopleDbContext>((op) => op.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PeopleDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            //services.AddScoped<Person>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

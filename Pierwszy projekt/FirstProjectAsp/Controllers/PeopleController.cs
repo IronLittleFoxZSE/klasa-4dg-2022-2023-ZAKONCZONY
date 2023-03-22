@@ -11,7 +11,12 @@ namespace FirstProjectAsp.Controllers
 {
     public class PeopleController : Controller
     {
-        private PeopleDbContext peopleDbContext = new PeopleDbContext();
+        private PeopleDbContext peopleDbContext;// = new PeopleDbContext();
+
+        public PeopleController(PeopleDbContext peopleDbContext)
+        {
+            this.peopleDbContext = peopleDbContext;
+        }
 
         public IActionResult Index()
         {
